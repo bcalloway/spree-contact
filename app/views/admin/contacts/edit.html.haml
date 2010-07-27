@@ -1,0 +1,20 @@
+%h1
+  Edit Contact
+
+- semantic_form_for(@contact, :url => "/admin/contacts/#{@contact.id}") do |f|
+  /= f.error_messages
+
+  - f.inputs do
+    = f.input :name, :required => true, :input_html => { :size => 60 }
+    = f.input :email, :required => true, :input_html => { :size => 60 }
+    = f.input :city, :required => false
+    = f.input :state, :label => "State", :required => false, :collection => State.find(:all, :order => "name ASC"), :as => :select
+    = f.input :zip, :required => false
+    = f.input :message, :required => true
+    = f.input :optin, :label => "Yes, please put me on your mailing list", :as => :boolean, :required => false
+
+    = f.commit_button "Update"
+
+%p
+  or
+  = link_to "Cancel", admin_contacts_path

@@ -1,0 +1,25 @@
+%h1
+  Contact Us
+
+%p
+  Interested in contacting us?
+  %br
+  Have questions?
+  %br
+  Please use the form below.
+
+
+- semantic_form_for @contact do |f|
+  /= f.error_messages
+
+  - f.inputs :class => "contact-form" do
+    = f.input :name, :required => true, :input_html => { :size => 60 }
+    = f.input :email, :required => true, :input_html => { :size => 60 }
+    = f.input :city, :required => false
+    = f.input :state, :label => "State", :required => false, :collection => State.find(:all, :order => "name ASC"), :as => :select, :prompt => "--Select a State--"
+    = f.input :zip, :required => false
+    = f.input :message, :required => true
+    = f.input :optin, :label => "Yes, please put me on your mailing list", :as => :boolean, :required => false, :input_html => { :checked => "checked" }
+
+  - f.buttons do
+    = f.commit_button "Submit"

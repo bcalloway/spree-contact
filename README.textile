@@ -1,0 +1,12 @@
+h1. Spree Contact Form
+
+This is a simply contact form you can install on your Spree Commerce site that will allow a user to send you a message off the site.
+All the info is emailed to the recipient, as well as being written to the database.  Database records can be edited or destroyed, as well as exported in CSV format.
+
+h2. Requirements
+
+* Formstastic, "http://github.com/justinfrench/formtastic":http://github.com/justinfrench/formtastic
+* Haml, "http://haml-lang.com/":http://haml-lang.com/
+* FasterCSV, "http://rubyforge.org/projects/fastercsv/":http://rubyforge.org/projects/fastercsv/
+
+Copyright (c) 2010 Brandon Calloway.  Released under the MIT license.

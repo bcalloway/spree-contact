@@ -1,0 +1,36 @@
+%strong
+  You have received a new email from the BrewgrassFestival.com website.
+
+%p
+  Here are the details of the message:
+
+%p
+  %strong
+    Name:
+  = @contact.name
+
+%p
+  %strong
+    Email:
+  = @contact.email
+  
+%p
+  %strong  
+    City:
+  = @contact.city
+  
+%p
+  %strong
+    State:
+  = @contact.state.name if @contact.state
+  
+%p
+  %strong
+    Zip:
+  = @contact.zip
+  
+%p
+  %strong
+    Message:
+  %br
+  = @contact.message

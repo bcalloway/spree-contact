@@ -1,0 +1,51 @@
+%h1 Brewgrass Contacts
+
+= will_paginate @contacts
+
+#export_newsletter_subscribers
+  %a{ :href => "#{admin_export_newsletter_subscribers_path}", :class => "button" }
+    %span
+      Export Newsletter Subscribers
+      
+#export_all_contacts
+  %a{ :href => "#{admin_export_all_contacts_path}", :class => "button" }
+    %span
+      Export All Contacts
+    
+%table.table
+  %tr
+    %th
+      Name
+    %th
+      Email
+    %th
+      City
+    %th
+      State
+    %th
+      Zip
+    %th
+      Newsletter?
+  - @contacts.each do |contact|
+    %tr
+      %td
+        = h contact.name
+      %td
+        = h contact.email
+      %td
+        = h contact.city
+      %td
+        = h show_state(contact.state_id) if contact.state_id != 0
+      %td
+        = h contact.zip
+      %td
+        - if contact.optin == 1
+          Yes
+        - else
+          No
+      %td
+        = link_to 'Edit', edit_admin_contact_path(contact)
+        |
+        = link_to 'Destroy', "/admin/contacts/#{contact.id}", :confirm => 'Are you sure?', :method => :delete
+  
+= will_paginate @contacts
