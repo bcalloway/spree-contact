@@ -1,0 +1,28 @@
+.formtastic ol {
+  list-style-type: none;
+}
+.formtastic input,
+.formtastic select,
+.formtastic textarea {
+  border: 1px solid #aaa;
+  padding: 3px;
+  font-size: 1.2em;
+  float:left;
+  clear:both;
+  color: #444;
+  margin-bottom: 8px;
+}
+.formtastic label {
+  float:left;
+  clear:both;
+  padding-right:8px;
+}
+.formtastic p.inline-errors {
+  color: red;
+}
+.formtastic li.error {
+  float:left;
+  clear:both;
+  padding-right:8px; 
+}
+

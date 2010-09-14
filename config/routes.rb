@@ -1,5 +1,6 @@
 map.resources :contacts
 map.contact '/contact', :controller => :contacts, :action => :new
+map.thanks '/thanks', :controller => :contacts, :action => :thanks
 
 map.namespace :admin do |admin|
   admin.resources :contacts
