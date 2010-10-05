@@ -7,10 +7,10 @@ class ContactExtension < Spree::Extension
   url "http://github.com/bcalloway/spree-contact"
 
   # Please use contact/config/routes.rb instead for extension routes.
-  # def self.require_gems(config)
-  #   config.gem "formtastic"
-  #   config.gem "haml"
-  # end
+  def self.require_gems(config)
+    config.gem "formtastic"
+    config.gem "haml"
+  end
   
   def activate
 
