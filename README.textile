@@ -9,4 +9,13 @@ h2. Requirements
 * Haml, "http://haml-lang.com/":http://haml-lang.com/
 * FasterCSV, "http://rubyforge.org/projects/fastercsv/":http://rubyforge.org/projects/fastercsv/
 
+h2. Known problems
+
+* HAML templates cannot be parsed: Run <code>haml --rails <RAILS_ROOT></code> to create a plugin loader init.rb in vendor/plugins/haml
+
+h2. Usage
+
+* Place the contact extension before your site extension in SPREE_EXTENSIONS_LOAD_ORDER to overload templates and configuration preferences.
+* Navigate to <code>/contacts/new</code> within your Spree application to see a contact form. The templates can be copied to your site extension for customization. Run <code>rake routes</code> for more advanced information.
+
 Copyright (c) 2010 Brandon Calloway.  Released under the MIT license.
